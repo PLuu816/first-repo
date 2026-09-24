@@ -1,5 +1,6 @@
 ---
-title: "index.qmd"
+title: "Storms Analysis"
+author: "Paul Luu Van Lang"
 format: html
 editor: source
 embed-resources: true

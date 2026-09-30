@@ -22,8 +22,23 @@ storms |>
 You can add options to executable code like this
 
 ```{r}
-#| echo: false
-2 * 2
+
+```
+
+## Big Question
+
+Count the # of observations each year for hurricanes with windspeeds above the 75th percentile for observations/hurricanes windspeeds above the 75th percentile for observations/hurricanes in that year
+
+```{r}
+library(tidyverse)
+
+storms |>
+  group_by(year) |>
+  mutate(threshold = quantile(wind, probs = 0.75)) |>
+  ungroup() |>
+  filter(wind > threshold) |>
+  count(year)
+
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
